@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang='en'>
       <Head title='Pokémon Pokédex' />
-      <body>
+      <body className='bg-[#e8e8e8]'>
         <Main />
         <NextScript />
       </body>

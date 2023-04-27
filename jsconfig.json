@@ -2,7 +2,10 @@
   "compilerOptions": {
     "paths": {
       "@/components/*": ["./components/*"],
-      "@/root/*": ["./*"]
+      "@/root/*": ["./*"],
+      "@/images/*": ["./assets/images/*"],
+      "@/utils/*": ["./utils/*"],
+      "@/lottie/*": ["./assets/lottie/*"]
     }
   }
 }
