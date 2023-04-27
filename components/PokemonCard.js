@@ -1,49 +1,50 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { borderHoverColors, borderColors } from '@/utils/colors';
 
-// const borderHoverColors = {
-//   Normal: 'hover:border-[#A8A77A] focus:border-[#A8A77A]',
-//   Fire: 'hover:border-[#EE8130] focus:border-[#EE8130]',
-//   Water: 'hover:border-[#6390F0] focus:border-[#6390F0]',
-//   Electric: 'hover:border-[#F7D02C] focus:border-[#F7D02C]',
-//   Grass: 'hover:border-[#7AC74C] focus:border-[#7AC74C]',
-//   Ice: 'hover:border-[#96D9D6] focus:border-[#96D9D6]',
-//   Fighting: 'hover:border-[#C22E28] focus:border-[#C22E28]',
-//   Poison: 'hover:border-[#A33EA1] focus:border-[#A33EA1]',
-//   Ground: 'hover:border-[#E2BF65] focus:border-[#E2BF65]',
-//   Flying: 'hover:border-[#A98FF3] focus:border-[#A98FF3]',
-//   Psychic: 'hover:border-[#F95587] focus:border-[#F95587]',
-//   Bug: 'hover:border-[#A6B91A] focus:border-[#A6B91A]',
-//   Rock: 'hover:border-[#B6A136] focus:border-[#B6A136]',
-//   Ghost: 'hover:border-[#735797] focus:border-[#735797]',
-//   Dragon: 'hover:border-[#6F35FC] focus:border-[#6F35FC]',
-//   Dark: 'hover:border-[#705746] focus:border-[#705746]',
-//   Steel: 'hover:border-[#B7B7CE] focus:border-[#B7B7CE]',
-//   Fairy: 'hover:border-[#D685AD] focus:border-[#D685AD]',
-// };
+// import { borderHoverColors, borderColors } from '@/utils/colors';
 
-// const borderColors = {
-//   Normal: 'border-[#A8A77A]',
-//   Fire: 'border-[#EE8130]',
-//   Water: 'border-[#6390F0]',
-//   Electric: 'border-[#F7D02C]',
-//   Grass: 'border-[#7AC74C]',
-//   Ice: 'border-[#96D9D6]',
-//   Fighting: 'border-[#C22E28]',
-//   Poison: 'border-[#A33EA1]',
-//   Ground: 'border-[#E2BF65]',
-//   Flying: 'border-[#A98FF3]',
-//   Psychic: 'border-[#F95587]',
-//   Bug: 'border-[#A6B91A]',
-//   Rock: 'border-[#B6A136]',
-//   Ghost: 'border-[#735797]',
-//   Dragon: 'border-[#6F35FC]',
-//   Dark: 'border-[#705746]',
-//   Steel: 'border-[#B7B7CE]',
-//   Fairy: 'border-[#D685AD]',
-// };
+const borderHoverColors = {
+  Normal: 'hover:border-[#A8A77A] focus:border-[#A8A77A]',
+  Fire: 'hover:border-[#EE8130] focus:border-[#EE8130]',
+  Water: 'hover:border-[#6390F0] focus:border-[#6390F0]',
+  Electric: 'hover:border-[#F7D02C] focus:border-[#F7D02C]',
+  Grass: 'hover:border-[#7AC74C] focus:border-[#7AC74C]',
+  Ice: 'hover:border-[#96D9D6] focus:border-[#96D9D6]',
+  Fighting: 'hover:border-[#C22E28] focus:border-[#C22E28]',
+  Poison: 'hover:border-[#A33EA1] focus:border-[#A33EA1]',
+  Ground: 'hover:border-[#E2BF65] focus:border-[#E2BF65]',
+  Flying: 'hover:border-[#A98FF3] focus:border-[#A98FF3]',
+  Psychic: 'hover:border-[#F95587] focus:border-[#F95587]',
+  Bug: 'hover:border-[#A6B91A] focus:border-[#A6B91A]',
+  Rock: 'hover:border-[#B6A136] focus:border-[#B6A136]',
+  Ghost: 'hover:border-[#735797] focus:border-[#735797]',
+  Dragon: 'hover:border-[#6F35FC] focus:border-[#6F35FC]',
+  Dark: 'hover:border-[#705746] focus:border-[#705746]',
+  Steel: 'hover:border-[#B7B7CE] focus:border-[#B7B7CE]',
+  Fairy: 'hover:border-[#D685AD] focus:border-[#D685AD]',
+};
+
+const borderColors = {
+  Normal: 'border-[#A8A77A]',
+  Fire: 'border-[#EE8130]',
+  Water: 'border-[#6390F0]',
+  Electric: 'border-[#F7D02C]',
+  Grass: 'border-[#7AC74C]',
+  Ice: 'border-[#96D9D6]',
+  Fighting: 'border-[#C22E28]',
+  Poison: 'border-[#A33EA1]',
+  Ground: 'border-[#E2BF65]',
+  Flying: 'border-[#A98FF3]',
+  Psychic: 'border-[#F95587]',
+  Bug: 'border-[#A6B91A]',
+  Rock: 'border-[#B6A136]',
+  Ghost: 'border-[#735797]',
+  Dragon: 'border-[#6F35FC]',
+  Dark: 'border-[#705746]',
+  Steel: 'border-[#B7B7CE]',
+  Fairy: 'border-[#D685AD]',
+};
 
 export default function PokemonCard(props) {
   /* <a target="_blank" href="https://icons8.com/icon/63311/pokeball">Pokeball</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
