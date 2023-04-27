@@ -92,20 +92,27 @@ export default function Home(props) {
 
   return (
     <div className='py-4 px-4 sm:px-8 md:px-10 lg:px-12'>
-      <Link href={'/'}>
-        <div className='flex flex-col justify-between items-center'>
-          <Image src={PokemonLogo} width={144} height={90} alt='Pokemon Logo' />
-          <article className='flex flex-row justify-between items-center mt-4'>
+      <div className='flex justify-center items-center'>
+        <Link href={'/'}>
+          <div className='flex flex-col justify-between items-center'>
             <Image
-              src={PokemonBall}
-              width={36}
-              height={36}
-              alt='Pokemon Ball'
+              src={PokemonLogo}
+              width={144}
+              height={90}
+              alt='Pokemon Logo'
             />
-            <p className='pl-2'>Pokédex</p>
-          </article>
-        </div>
-      </Link>
+            <article className='flex flex-row justify-between items-center mt-4'>
+              <Image
+                src={PokemonBall}
+                width={36}
+                height={36}
+                alt='Pokemon Ball'
+              />
+              <p className='pl-2'>Pokédex</p>
+            </article>
+          </div>
+        </Link>
+      </div>
       {loading && <Loader />}
       {!loading && (
         <section className='grid grid-cols-[repeat(1,minmax(0,0.75fr))] auto-rows-auto gap-12 place-content-center my-9 sm:grid-cols-2 sm:gap-x-2 md:grid-cols-3 md:gap-x-3 lg:gap-x-4 lg:grid-cols-4 lg:mx-auto xl:max-w-[80vw]'>

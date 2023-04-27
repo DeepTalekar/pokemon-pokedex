@@ -28,6 +28,7 @@ const SINGLE_POKEMON_DETAIL = gql`
       }
       classification
       types
+      resistant
       weaknesses
       image
     }
