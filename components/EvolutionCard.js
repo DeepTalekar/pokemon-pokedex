@@ -1,8 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-
-// import { borderHoverColors, borderColors } from '@/utils/colors';
 
 const borderHoverColors = {
   Normal: 'hover:border-[#A8A77A] focus:border-[#A8A77A]',
@@ -46,9 +42,7 @@ const borderColors = {
   Fairy: 'border-[#D685AD]',
 };
 
-export default function PokemonCard(props) {
-  /* <a target="_blank" href="https://icons8.com/icon/63311/pokeball">Pokeball</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
-
+export default function EvolutionCard(props) {
   const type =
     props?.types[0] === 'Normal'
       ? props?.types.length > 1
@@ -60,13 +54,13 @@ export default function PokemonCard(props) {
   const bColor = borderColors[type];
 
   return (
-    <Link
-      href={`/pokemon/${props?.name}`}
-      prefetch={false}
-      className={`${bHoverColor} relative p-6 bg-white flex flex-col justify-between items-center rounded-2xl border-solid border-2 border-gray-300 focus:shadow-[0_4px_18px_0_rgba(0,0,0,0.25)] hover:shadow-[0_4px_18px_0_rgba(0,0,0,0.25)] transition-all duration-500 ease-out`}>
+    <a
+      onClick={props?.onClick}
+      className={`${bHoverColor} cursor-pointer relative p-6 bg-white flex flex-col justify-between items-center rounded-2xl border-solid border-2 border-opacity-20 border-gray-300 focus:shadow-[0_4px_18px_0_rgba(0,0,0,0.25)] hover:shadow-[0_4px_18px_0_rgba(0,0,0,0.25)] transition-all duration-500 ease-out ${props?.containerStyle}`}>
       <div
-        className={`${bColor} w-48 h-48 mb-4 rounded-full overflow-hidden flex justify-center items-center bg-white border-2 border-solid`}>
-        <figure className={`relative bg-white w-36 h-36 overflow-hidden`}>
+        className={`${bColor} w-36 h-36 mb-4 rounded-full overflow-hidden flex justify-center items-center bg-white border-2 border-solid sm:w-48 sm:h-48`}>
+        <figure
+          className={`relative bg-white w-28 h-28 overflow-hidden sm:w-36 sm:h-36`}>
           <Image
             className='bg-no-repeat bg-center object-contain'
             src={props.image}
@@ -89,6 +83,6 @@ export default function PokemonCard(props) {
       <span className='rounded-full py-2 px-3 bg-[#e8e8e8] text-xs font-bold text-slate-400 absolute top-2 left-1'>
         #{props.number}
       </span>
-    </Link>
+    </a>
   );
 }

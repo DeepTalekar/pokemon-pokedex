@@ -30,12 +30,15 @@ export default function Home(props) {
   useEffect(() => {
     async function getMorePokemons() {
       setLoading(true);
-      const { data } = await client.query({
+      const { data, error, errors } = await client.query({
         query: GET_POKEMONS,
         variables: {
           first: count,
         },
       });
+
+      props.error = error;
+      props.errors = errors;
 
       setAllPokemons(data?.pokemons);
       setLoading(false);
@@ -87,6 +90,8 @@ export default function Home(props) {
   }
 
   console.log('Count: ', count);
+  console.log('Error: ', props?.error);
+  console.log('Errors: ', props?.errors);
 
   return (
     <div className='py-4 px-4 sm:px-8 md:px-10 lg:px-12'>
@@ -127,7 +132,7 @@ export default function Home(props) {
   );
 }
 export async function getStaticProps(context) {
-  const { data } = await client.query({
+  const { data, error, errors } = await client.query({
     query: GET_POKEMONS,
     variables: {
       first: 60,
@@ -138,6 +143,8 @@ export async function getStaticProps(context) {
   return {
     props: {
       pokemons: data?.pokemons,
+      error: error ?? null,
+      errors: errors ?? null,
     }, // will be passed to the page component as props
   };
 }

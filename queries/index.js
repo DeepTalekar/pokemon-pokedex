@@ -44,13 +44,8 @@ const GET_POKEMON_EVOLUTION = gql`
         id
         number
         name
-        classification
-        types
-        weaknesses
-        evolutions {
-          id
-        }
         image
+        types
       }
     }
   }
