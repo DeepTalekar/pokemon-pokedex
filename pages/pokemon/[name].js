@@ -25,6 +25,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EvolveButton from '@/components/EvolveButton';
 import EvolutionCard from '@/components/EvolutionCard';
+import Lottie from 'lottie-react';
+import pokeballAnimation from '@/lottie/pokeball-loading-animation.json';
 
 const bgHoverColors = {
   Normal: 'hover:bg-[#A8A77A] focus:bg-[#A8A77A]',
@@ -274,7 +276,15 @@ export default function PokemonDetail(props) {
                   overlay: overlayStyle,
                 }}>
                 {evolutionLoading === true && (
-                  <Loader containerStyle='w-28 h-28' />
+                  <div className='flex justify-center items-center w-28 h-28'>
+                    <Lottie
+                      className='w-24 h-24'
+                      animationData={pokeballAnimation}
+                      loop={true}
+                      autoplay={true}
+                      autoPlay={true}
+                    />
+                  </div>
                 )}
                 {evolutionLoading === false && evolutions?.length !== 0 && (
                   <section
